@@ -80,7 +80,8 @@ local defaults = {
 		flashDuration = 0.4,
 		interruptSettings = {
 			-- Warrior
-			[6552]	= {userenabled = true,  id = 6552,  sound = "ezInterrupt: Ding", rgb = {1, 0, 0}},		-- Pummel
+			[6552]	= {userenabled = true,  id = 6552,  sound = "ezInterrupt: Ding", rgb = {1, 0, 0}},		-- Pummel			
+			[102060] = {userenabled = true,  id = 102060,  sound = "ezInterrupt: Chime", rgb = {1, 0, 0}},		-- Disrupting Shout!
 			-- Druid
 			[80964]	= {userenabled = true,  id = 80964, sound = "ezInterrupt: Ding", rgb = {1, 0, 0}},		-- Skull Bash (Bear)
 			[80965]	= {userenabled = true,  id = 80965, sound = "ezInterrupt: Ding", rgb = {1, 0, 0}},		-- Skull Bash (Cat)
@@ -771,6 +772,7 @@ function ezInterrupt:UpdateInterrupts()
 	if not self.Interrupt then self.Interrupt = {} end
 	if class == "WARRIOR" then
 		self:LoadInterruptSettings(1, 6552)			-- Pummel
+		self:LoadInterruptSettings(2, 102060)			-- Disrupting Shout!
 		if select(2, UnitRace("player")) == "BloodElf" then
 			self:LoadInterruptSettings(3, 69179)	-- Arcane Torrent (Rage)
 		end
